@@ -1,232 +1,158 @@
-📌 1. 해당 포지션 요약 (Research Scientist Internship – Data Intelligence)
+📌 1. 토스뱅크 데이터분석가가 요구하는 핵심 기술 스택
+🧠 필수 기술 / 역량
 
-이 공고는 LG AI연구원 Data Intelligence Lab 소속 인턴 리서치 직무로,
-머신러닝/딥러닝 기반 데이터 분석, 예측, 최적화 관련 연구 수행을 담당한다.
-주요 연구 분야는 아래와 같아: 
-LG AI Research
+✔ SQL 기반 데이터 추출 · 정제
 
-🔹 Neural combinatorial optimization
-🔹 정형데이터 기반 딥러닝
-🔹 최신 시계열 모델 및 Dynamics 연구
-🔹 인과 효과/반사실적 시나리오 처리
-🔹 최적화 문제를 딥러닝으로 해결
+실무 데이터 분석의 기본
 
-또한 Python + 딥러닝 프레임워크(PyTorch/TensorFlow) 활용 능력이 필요하며, Top-tier 학회 논문 경험을 우대한다. 
-LG AI Research
+3년 이상의 SQL 실무 능력 필요 
+원티드
 
-🧠 2. 필요한 기술 스택
+✔ 데이터 전처리 → 문제 정의 → 인사이트 도출
 
-아래는 이 직무를 지원하기 위해 갖추면 좋은 핵심 스택이야.
+데이터 분석 전반을 스스로 책임지고 수행하는 능력 
+원티드
 
-🎯 A. 딥러닝 & 머신러닝 기반 연구 역량
+✔ 데이터 시각화 툴
 
-기초 머신러닝 알고리즘
+Tableau / Redash / Power BI 등 시각화 도구로 의미 있는 대시보드·리포트 제작 
+원티드
 
-Linear Regression, Logistic Regression
+✔ 모바일 서비스 지표 이해
 
-SVM, Random Forest, Gradient Boosting 등
+고객 행동 분석: LTV, Retention, Cohort, Funnel 등 
+원티드
 
-딥러닝 구조 이해
+✔ A/B 테스트 설계·검증 경험
 
-Fully Connected Networks
+실험 기반 의사결정 능력 
+원티드
 
-CNN, RNN/LSTM/GRU
+✔ 비즈니스 커뮤니케이션
 
-Transformer 기반 모델
+분석 결과를 명확히 전달하는 스토리텔링 능력 
+원티드
 
-Attention, Self-Attention 메커니즘
+💡 우대 기술
 
-최적화 & 강화학습 기초
+✔ 데이터 마트 / 데이터 파이프라인 설계
 
-Optimization (SGD, Adam, etc.)
+분석용 데이터 기반구조 설계 경험 
+원티드
 
-강화학습 기반 최적화 접근법
+✔ Python 또는 R 통계분석
 
-👉 이 포지션은 복잡한 최적화 문제에 딥러닝을 접목하기 때문에,
-이런 구조를 이해하고 구현해본 경험이 필요해. 
-LG AI Research
+Python/R을 통한 통계 분석 경험 
+원티드
 
-🛠️ B. 최신 모델 아키텍처 및 시계열 처리 기술
+📌 2. 실무형 사이드 프로젝트 추천 (하나만)
+✅ 최고의 프로젝트:
+“모바일 앱 사용자 행동 데이터 기반 지표 & 실험 분석 프로젝트”
 
-최신 모델 아키텍처
+모바일 서비스를 중심으로 사용자 행동 로그 → 인사이트 → 가설검증 → A/B 실험까지 실전 흐름을 구현하는 프로젝트야.
+토스뱅크에서 실제로 하는 Core Data Analytics 과정을 거의 포트폴리오로 보여줄 수 있어.
 
-iTransformer, TimeMixer, PatchTST 같은 시계열 모델
+📊 3. 프로젝트 개요
+🎯 목적
 
-State-Space Models (SSMs – Mamba/S-Mamba)
+모바일 서비스의 사용자 행동 데이터를 분석하고,
+✔ 핵심 지표 정의
+✔ 실험 설계(가설 검증)
+✔ 결과 시각화
+까지 수행해서 비즈니스적인 인사이트를 도출한다.
 
-시계열 & 동적 데이터를 다루는 전문 스킬
+🛠️ 4. 프로젝트 구성
+🎯 ① 데이터 수집 & 전처리
 
-Long-term dependency 처리
+가상의 또는 공개 모바일 앱 사용자 로그 데이터를 활용
 
-Attention 기반 시계열 모델 튜닝
+사용자 세션
 
-Fourier/Wavelet 기반 feature
+이벤트 로그 (앱 실행, 화면 클릭, 카트 추가 등)
 
-👉 특히 장기 의존성(Long-term Dependency) 문제를 다루는 기술이 중요. 
-LG AI Research
+📌 수행 스킬
 
-🧪 C. 실험 설계 & 연구 능력
+SQL로 raw 로그 추출
 
-실험 반복 설계
+정제/적재 (결측/중복 처리)
 
-하이퍼파라미터 탐색
+필요한 파생변수 생성
 
-벤치마크/평가 지표 생성 (MSE, MAE, Accuracy 등)
+📊 ② 핵심 지표 지표정의
 
-논문 기반 기술 재현 및 개선
+모바일 서비스 필수 지표를 계산한다:
 
-👉 논문을 분석해서 직접 코드로 구현해본 경험은 이 연구실에서 매우 강력한 지원 요인임. 
-LG AI Research
+Retention Rate
 
-🧠 D. 프로그래밍 / 툴
+Cohort Analysis
 
-✔ Python (필수)
-✔ PyTorch / TensorFlow 활용 능력
-✔ NumPy / Pandas / Scikit-learn
-✔ 실험 자동화: Optuna / Ray Tune
-✔ 데이터 전처리/시각화: Matplotlib / Seaborn
+Conversion Funnel
 
-📊 E. (있으면 좋은) 우대 사항
+LTV (Lifetime Value)
 
-⭐ Top-tier 학회 출판 경험 (NeurIPS, ICLR, ICML 등)
-⭐ 대규모 데이터/시뮬레이터 구성 경험
-⭐ 실제 산업 문제 적용 알고리즘 설계 경험
-⭐ 인과 추론/Counterfactual 분석 기술
-⭐ 대규모 모델/병렬 연산 최적화 경험
+📌 수행 스킬
 
-💡 3. 스택을 쌓을 수 있는 사이드 프로젝트 아이디어
+그룹별 분석
 
-아래 프로젝트들은 포트폴리오로 제출 가능하면서도 LG AI연구원이 실제 중요하게 여길 연구 능력을 기를 수 있는 것이야:
+시간 기반 분석
 
-📌 Project 1 — Inventory Demand Forecast with Novel Sequence Models
+시각화 (차트/그래프)
 
-목표: 제조/공급망 데이터를 기반으로 미래 수요 예측 모델 설계
-스택 학습 포인트
+🧪 ③ A/B 테스트 설계 & 결과 분석
 
-시계열 예측 모델 (Transformer, SSM)
+예시 A/B 실험:
 
-Python + PyTorch
+푸시 알림 메시지 유형 변경
 
-Optuna 하이퍼파라미터 탐색
+Onboarding Flow 수정
 
-모델 성능 분석(MAE/MSE)
+할인/리텐션 이벤트
 
-실습 내용
+📌 수행 스킬
 
-공개 공급망/소매 판매 데이터 수집
+실험 설계 (통계적 가설)
 
-Transformer/SSM 기반 예측 모델 비교
+t-test / 통계 유의성 검증
 
-결과를 리포트로 시각화
+실험 결과 보고
 
-보여줄 수 있는 포인트
-✔ 다양한 시계열 아키텍처 간 성능 비교
-✔ 장기 의존성 문제 개선 결과
-✔ 명확한 평가 지표 보고
+📈 ④ 데이터 시각화 & 리포트
 
-📌 Project 2 — Neural Combinatorial Optimization for Routing/Allocation
+Tool 예시:
 
-목표: 딥러닝 + Combinatorial Optimization 결합
-스택 학습 포인트
+Tableau / Power BI / Redash
 
-Neural combinatorial optimization
+Python 시각화 (Matplotlib, Seaborn)
 
-강화학습 기반 탐색
+✔ 분석 대시보드
+✔ 인사이트 리포트
+✔ 스토리 기반 발표 자료
 
-Python 환경 모델 설계
+📌 5. 왜 이 프로젝트가 “토스뱅크 취업용”으로 최고인가
+🌟 실무 핵심 역량 모두 포함
 
-실습 내용
+✔ SQL 데이터 추출 & 정제
+✔ 모바일 사용자 지표 분석
+✔ 실험 설계(A/B Test)
+✔ 시각화 & 비즈니스 인사이트 도출
+✔ 커뮤니케이션 가능한 분석 리포트
 
-TSP/Vehicle Routing 문제 데이터 준비
+👉 실제 채용에서 바로 질문 받을 실전 경험을 깨알같이 보여줄 수 있어. 
+원티드
 
-GNN / Pointer Network / RL 기반 해법 구현
+🧠 6. 프로젝트 결과물 포트폴리오 형태
+📁 GitHub Repo
 
-비교 실험 + 시각적 결과 제시
+README: 문제 → 접근 → 결과
 
-보여줄 수 있는 포인트
-✔ 딥러닝 + 최적화 문제 결합
-✔ 탐색-학습 구조 설계
-✔ 강화학습 적용 예시 구현
+Jupyter Notebook / Python Script
 
-📌 Project 3 — Long-term Time-series Benchmarking Library
+SQL 쿼리집
 
-목표: 여러 시계열 모델을 통합 실험 프레임워크로 비교
-스택 학습 포인트
+📊 대시보드
 
-최신 시계열 모델 아키텍처 이해
+Tableau / Power BI 링크 또는 스크린샷
 
-Pipeline 자동화
+📄 발표/보고서
 
-평가 및 시각화
-
-실습 내용
-
-다양한 모델(OriTransformer, PatchTST, SSM) 비교
-
-자동화 실험 코드 + 시각화 리포트
-
-논문 기반 모델 개선/수정
-
-보여줄 수 있는 포인트
-✔ 정책적인 실험 구조
-✔ 자동화된 비교 및 분석
-✔ 연구 리포트 수준의 결과 도출
-
-📌 Project 4 — Causal/Counterfactual 시계열 분석 도구
-
-목표: 실제 원인 분석 요소를 반영한 시계열 예측
-스택 학습 포인트
-
-인과추론 기술
-
-Counterfactual 시뮬레이션
-
-실험 설계 + 분석 보고
-
-실습 내용
-
-인과 Graph 생성
-
-CausalImpact, DoWhy 등 툴 활용
-
-결과 보고서 작성
-
-보여줄 수 있는 포인트
-✔ 설명 가능한 AI/인과추론 기반 분석 설계
-✔ 실제 비즈니스 적용 사례
-
-📌 4. 어떻게 포트폴리오에 정리할 것인가
-
-📌 프로젝트마다 아래 구조로 정리하면 좋아요:
-
-문제 정의 + 동기
-
-기술 스택 설계 이유
-
-모델 구성 / 아키텍처 그림
-
-성능 평가 & 그래프 비교
-
-발견 & 개선 포인트
-
-이런 정리는 연구 능력과 *Data Intelligence Lab이 중요하게 여기는 ‘실험 설계 역량’*을 드러내 줄 거예요. 
-LG AI Research
-
-📌 5. 마무리 정리 — 지원 핵심 요약
-
-🧩 핵심 스택
-
-딥러닝 기반 시계열 모델 + 최적화
-
-Python + PyTorch/TensorFlow
-
-실험 설계 능력 + 평가 지표 해석
-
-🧪 강하게 보여줄 포인트
-✔ 여러 모델 비교 자동화
-✔ 논문 기반 모델 개선/개발
-✔ 실제 데이터 적용 + 결과 리포트
-
-📈 포트폴리오 방향
-단순 구현 → 실험 설계 + 비교 → 개선 + 분석 결과 레포트까지 완성하는 구조! 
-LG AI Research
+Slide: 문제 정의 → 가설 → 분석 → 교훈 → 비즈니스 액션

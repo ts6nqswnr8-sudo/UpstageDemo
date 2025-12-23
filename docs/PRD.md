@@ -1,146 +1,233 @@
-# Product Requirements Document (PRD): Causal Time Series Analysis & Forecasting System
+# Product Requirements Document (PRD): Mobile User Behavior Analytics Platform
 
 ## 1. 프로젝트 개요
-**프로젝트명**: Causal Time Series Analysis & Forecasting System  
-**목표**: 최신 시계열 예측 모델과 인과 추론 기술을 결합하여, 반사실적(Counterfactual) 시나리오 분석이 가능한 연구 중심 AI 시스템 개발. LG AI Research Data Intelligence Lab의 연구 방향성에 부합하는 포트폴리오 수준의 프로젝트.
+**프로젝트명**: Mobile User Behavior Analytics Platform  
+**목표**: 모바일 앱 사용자 행동 데이터를 분석하여 핵심 지표를 정의하고, A/B 테스트를 통한 가설 검증 및 비즈니스 인사이트를 도출하는 데이터 분석 플랫폼 개발. 토스뱅크 데이터 분석가 포지션 요구사항을 충족하는 포트폴리오 프로젝트.
 
 ## 2. 해결하고자 하는 문제
-- **단순 예측의 한계**: 기존 시계열 모델은 과거 패턴 기반 예측만 가능하며, "특정 변수를 변경하면 어떻게 될까?"라는 **개입(Intervention)** 질문에 답하지 못함.
-- **인과 관계 이해 부족**: 상관관계는 파악하지만 인과관계(Causality)를 명확히 설명하지 못하는 블랙박스 문제.
-- **연구 역량 증명**: Top-tier 학회 수준의 실험 설계, 모델 비교, 성능 분석 능력을 보여줄 수 있는 체계적인 프로젝트 필요.
+- **데이터 기반 의사결정 부재**: 모바일 서비스에서 사용자 행동 데이터를 체계적으로 분석하지 못해 직관에 의존한 의사결정
+- **핵심 지표 부재**: Retention, LTV, Funnel 등 모바일 서비스 필수 지표가 정의되지 않아 성과 측정 불가
+- **실험 검증 미흡**: A/B 테스트 없이 기능 변경 시 효과를 정량적으로 검증하지 못함
+- **인사이트 전달 어려움**: 분석 결과를 비즈니스 팀에 효과적으로 전달하지 못함
 
 ## 3. 핵심 기능 (MVP Scope)
 
-### 3.1 합성 데이터 생성 (Synthetic Data Generation)
-- **인과 그래프 기반 데이터 생성**: 명확한 인과 관계(Price → Demand, Seasonality → Sales 등)가 내재된 시계열 데이터 생성.
-- **Ground Truth 검증**: 생성된 데이터의 실제 인과 효과를 알고 있어 모델 성능 검증 용이.
-- **다양한 시나리오**: 계절성, 트렌드, 노이즈, 외부 충격(Shock) 등 다양한 패턴 포함.
+### 3.1 데이터 수집 및 전처리
+- **사용자 행동 로그 수집**:
+  - 앱 실행, 화면 전환, 버튼 클릭 등 이벤트 로그
+  - 사용자 세션 데이터 (시작/종료 시간, 세션 길이)
+  - 사용자 속성 (가입일, 디바이스, OS, 지역 등)
+- **SQL 기반 데이터 추출 및 정제**:
+  - Raw 로그에서 필요한 데이터 추출
+  - 결측치 처리, 중복 제거
+  - 파생 변수 생성 (일별 활성 사용자, 세션당 이벤트 수 등)
 
-### 3.2 최신 시계열 예측 모델 벤치마킹 (SOTA Forecasting Models)
-- **구현 모델**:
-  - **PatchTST**: Transformer 기반 패치 단위 시계열 모델
-  - **iTransformer**: Inverted Transformer 아키텍처
-  - **TimeMixer**: Multi-scale mixing 기반 모델
-  - **State-Space Models (SSM)**: Mamba/S-Mamba 등 최신 SSM 아키텍처
-- **베이스라인 비교**: ARIMA, XGBoost, LSTM 등 전통적 모델 대비 성능 비교.
-- **평가 지표**: MSE, MAE, RMSE, MAPE 등 다양한 메트릭으로 정량 평가.
+### 3.2 핵심 지표 정의 및 계산
+- **Retention Rate (재방문율)**:
+  - Day 1, Day 7, Day 30 Retention 계산
+  - 코호트별 Retention 추이 분석
+- **Cohort Analysis (코호트 분석)**:
+  - 가입 시기별 사용자 그룹 행동 비교
+  - 시간 경과에 따른 사용자 활동 변화 추적
+- **Conversion Funnel (전환 퍼널)**:
+  - 회원가입 → 첫 거래 → 재거래 퍼널 분석
+  - 각 단계별 이탈률 계산
+- **LTV (Lifetime Value)**:
+  - 사용자 생애 가치 예측
+  - 고객 세그먼트별 LTV 비교
 
-### 3.3 인과 추론 모듈 (Causal Inference Module)
-- **라이브러리**: Microsoft EconML, DoWhy, CausalImpact.
-- **인과 그래프 정의**: DAG(Directed Acyclic Graph)를 통한 변수 간 인과 관계 명시.
-- **효과 추정**:
-  - **ATE (Average Treatment Effect)**: 평균 처치 효과
-  - **CATE (Conditional Average Treatment Effect)**: 조건부 평균 처치 효과
-  - **Price Elasticity**: 가격 탄력성 산출
-- **반사실적 추론**: "만약 X를 변경했다면 Y는 어떻게 되었을까?" 시뮬레이션.
+### 3.3 A/B 테스트 설계 및 분석
+- **실험 설계**:
+  - 가설 수립 (예: "푸시 알림 메시지 변경 시 재방문율 증가")
+  - 대조군/실험군 분할
+  - 샘플 크기 계산
+- **통계적 검증**:
+  - t-test, Chi-square test 등 통계 검정
+  - p-value, 신뢰구간 계산
+  - 통계적 유의성 판단
+- **실험 결과 분석**:
+  - 실험 효과 정량화
+  - 세그먼트별 효과 차이 분석
+  - 비즈니스 임팩트 산출
 
-### 3.4 자동화된 실험 프레임워크 (Automated Experiment Pipeline)
-- **하이퍼파라미터 탐색**: Optuna 또는 Ray Tune을 활용한 자동 튜닝.
-- **모델 비교 자동화**: 여러 모델을 동일 조건에서 학습 및 평가.
-- **재현 가능성**: 실험 설정, 랜덤 시드, 결과를 체계적으로 기록.
-
-### 3.5 시각화 및 대시보드 (Visualization & Dashboard)
-- **Streamlit 기반 대시보드**:
-  - 모델별 예측 결과 비교 그래프
-  - 인과 효과 시각화 (Treatment vs Control)
-  - Interactive Slider로 개입 변수 조절 및 실시간 시뮬레이션
-- **연구 리포트 생성**: 실험 결과를 논문 수준의 표와 그래프로 자동 생성.
+### 3.4 데이터 시각화 및 대시보드
+- **Interactive Dashboard**:
+  - Tableau / Power BI를 활용한 실시간 대시보드
+  - 주요 지표 모니터링 (DAU, MAU, Retention 등)
+  - 드릴다운 기능으로 세부 분석 가능
+- **Python 시각화**:
+  - Matplotlib, Seaborn을 활용한 정적 차트
+  - Plotly를 활용한 인터랙티브 그래프
+- **분석 리포트**:
+  - 스토리텔링 기반 인사이트 전달
+  - 비즈니스 액션 아이템 제시
 
 ## 4. 기술 스택
 
-### 4.1 Core Technologies
-- **Language**: Python 3.9+
-- **Deep Learning Framework**: PyTorch, TensorFlow
-- **시계열 모델**: 
-  - HuggingFace Transformers (PatchTST)
-  - NeuralForecast
-  - Custom implementations (iTransformer, TimeMixer, SSM)
+### 4.1 데이터 처리
+- **SQL**: PostgreSQL / MySQL (데이터 추출 및 정제)
+- **Python**: Pandas, NumPy (데이터 전처리 및 분석)
+- **Jupyter Notebook**: 탐색적 데이터 분석 (EDA)
 
-### 4.2 Causal Inference
-- **Microsoft EconML**: Double ML, Causal Forest, DML
-- **DoWhy**: Causal graph modeling, effect estimation
-- **CausalImpact**: Bayesian structural time-series models
+### 4.2 통계 분석
+- **Python**: SciPy, StatsModels (통계 검정)
+- **A/B Testing**: statsmodels, scipy.stats
 
-### 4.3 Experiment & Optimization
-- **Optuna**: Hyperparameter optimization
-- **Ray Tune**: Distributed hyperparameter search
-- **MLflow**: Experiment tracking
+### 4.3 시각화
+- **Tableau / Power BI**: 대시보드 구축
+- **Python**: Matplotlib, Seaborn, Plotly
+- **Redash** (선택): SQL 기반 시각화
 
-### 4.4 Data & Visualization
-- **Pandas, NumPy**: Data manipulation
-- **Matplotlib, Seaborn, Plotly**: Visualization
-- **Streamlit**: Interactive dashboard
+### 4.4 데이터베이스
+- **PostgreSQL**: 사용자 행동 로그 저장
+- **Data Warehouse**: BigQuery / Snowflake (선택)
 
-## 5. 데이터 흐름 (Data Flow)
+## 5. 데이터 흐름
 
 ```
-1. Synthetic Data Generation
+1. 데이터 수집
+   - 모바일 앱 이벤트 로그 수집
+   - 사용자 속성 데이터 수집
    ↓
-2. Data Preprocessing & Feature Engineering
+2. 데이터 저장
+   - PostgreSQL / BigQuery에 저장
    ↓
-3. Train/Test Split (시계열 고려)
+3. SQL 기반 데이터 추출
+   - 분석 목적에 맞는 데이터 쿼리
+   - 파생 변수 생성
    ↓
-4. Forecasting Models Training
-   ├─ PatchTST
-   ├─ iTransformer
-   ├─ TimeMixer
-   └─ SSM (Mamba)
+4. Python 분석
+   - 핵심 지표 계산 (Retention, LTV, Funnel)
+   - A/B 테스트 통계 검정
    ↓
-5. Model Evaluation & Comparison
-   ↓
-6. Causal Inference Analysis
-   ├─ Causal Graph Definition
-   ├─ Effect Estimation (ATE/CATE)
-   └─ Counterfactual Simulation
-   ↓
-7. Visualization & Reporting
+5. 시각화 및 리포트
+   - Tableau 대시보드
+   - Python 차트
+   - 인사이트 리포트
 ```
 
-## 6. 연구 목표 및 성과 지표
+## 6. 주요 분석 시나리오
 
-### 6.1 연구 목표
-- **모델 성능 비교**: 최신 시계열 모델들의 장단점 분석 및 벤치마킹.
-- **인과 효과 정량화**: 특정 변수 변화가 결과에 미치는 영향을 수치로 증명.
-- **설명 가능성**: 예측 결과에 대한 인과적 설명 제공.
+### 시나리오 1: 푸시 알림 최적화
+- **가설**: "개인화된 푸시 알림이 일반 푸시보다 재방문율을 높인다"
+- **실험 설계**:
+  - 대조군: 일반 푸시 알림
+  - 실험군: 개인화 푸시 알림
+- **측정 지표**: Day 1 Retention, Day 7 Retention
+- **분석**: t-test로 통계적 유의성 검증
 
-### 6.2 성과 지표
-- **예측 정확도**: MSE, MAE 기준 베이스라인 대비 X% 개선.
-- **인과 효과 추정 정확도**: Ground Truth 대비 추정 오차 Y% 이내.
-- **재현 가능성**: 모든 실험 결과 재현 가능한 코드 및 문서 제공.
-- **포트폴리오 품질**: 논문 수준의 실험 리포트 및 시각화 자료 생성.
+### 시나리오 2: 온보딩 플로우 개선
+- **가설**: "간소화된 온보딩이 첫 거래 전환율을 높인다"
+- **실험 설계**:
+  - 대조군: 기존 5단계 온보딩
+  - 실험군: 간소화된 3단계 온보딩
+- **측정 지표**: 온보딩 완료율, 첫 거래 전환율
+- **분석**: Conversion Funnel 비교
+
+### 시나리오 3: 할인 이벤트 효과 분석
+- **가설**: "10% 할인 이벤트가 사용자 LTV를 증가시킨다"
+- **실험 설계**:
+  - 대조군: 할인 없음
+  - 실험군: 10% 할인 제공
+- **측정 지표**: 30일 LTV, 재구매율
+- **분석**: LTV 비교 및 ROI 계산
 
 ## 7. 개발 로드맵
 
-### Phase 1: 데이터 및 환경 구축 (Week 1-2)
-- 합성 데이터 생성 스크립트 작성 (인과 그래프 기반).
-- ML 환경 설정 (PyTorch, EconML, Optuna).
-- 베이스라인 모델 구현 (ARIMA, XGBoost).
+### Phase 1: 데이터 인프라 구축 (Week 1-2)
+- 가상 모바일 앱 사용자 로그 데이터 생성
+- PostgreSQL 데이터베이스 설계 및 구축
+- SQL 쿼리 작성 (데이터 추출 및 정제)
 
-### Phase 2: 최신 모델 구현 및 벤치마킹 (Week 3-4)
-- PatchTST, iTransformer, TimeMixer, SSM 구현.
-- 자동화된 실험 파이프라인 구축.
-- 모델별 성능 비교 및 분석.
+### Phase 2: 핵심 지표 계산 (Week 3-4)
+- Retention Rate 계산 로직 구현
+- Cohort Analysis 구현
+- Conversion Funnel 분석
+- LTV 계산 모델 구현
 
-### Phase 3: 인과 추론 통합 (Week 5-6)
-- DoWhy/EconML을 활용한 인과 그래프 정의.
-- ATE/CATE 추정 및 검증.
-- 반사실적 시뮬레이션 구현.
+### Phase 3: A/B 테스트 프레임워크 (Week 5-6)
+- 실험 설계 프레임워크 구축
+- 통계 검정 함수 구현 (t-test, Chi-square)
+- 3가지 시나리오 A/B 테스트 수행
+- 결과 분석 및 리포트 작성
 
-### Phase 4: 대시보드 및 리포트 (Week 7-8)
-- Streamlit 대시보드 구현.
-- 실험 결과 시각화 및 자동 리포트 생성.
-- 포트폴리오 문서화 (README, 실험 노트, 결과 분석).
+### Phase 4: 시각화 및 대시보드 (Week 7-8)
+- Tableau / Power BI 대시보드 구축
+- Python 시각화 차트 생성
+- 인사이트 리포트 작성
+- 포트폴리오 문서화
 
-## 8. 기대 효과 및 활용
+## 8. 성과 지표
 
-### 8.1 연구 역량 증명
-- Top-tier 학회(NeurIPS, ICLR, ICML) 수준의 실험 설계 및 분석 능력 시연.
-- 최신 시계열 모델에 대한 깊은 이해 및 구현 경험.
+### 분석 품질
+- **데이터 정확성**: SQL 쿼리 검증, 데이터 품질 체크
+- **통계적 신뢰성**: p-value < 0.05, 충분한 샘플 크기
+- **재현 가능성**: 모든 분석 코드 및 쿼리 문서화
 
-### 8.2 실무 적용 가능성
-- 소매/제조/금융 등 다양한 산업에서 의사결정 지원 도구로 활용.
-- 가격 최적화, 수요 예측, 재고 관리 등 실제 비즈니스 문제 해결.
+### 비즈니스 임팩트
+- **인사이트 도출**: 최소 3가지 이상의 실행 가능한 인사이트
+- **A/B 테스트 성공**: 통계적으로 유의미한 결과 도출
+- **의사결정 지원**: 분석 결과 기반 비즈니스 액션 제안
 
-### 8.3 LG AI Research 적합성
-- Data Intelligence Lab의 연구 방향(시계열, 인과추론, 최적화)과 완벽히 부합.
-- 인턴십 지원 시 강력한 포트폴리오로 활용 가능.
+### 포트폴리오 품질
+- **코드 품질**: 주석, Docstring, 모듈화
+- **문서화**: README, 분석 노트, 리포트
+- **시각화**: 직관적이고 설득력 있는 차트
+
+## 9. 포트폴리오 구성
+
+### GitHub Repository
+- **README.md**: 프로젝트 개요, 설치 방법, 주요 결과
+- **SQL 쿼리집**: 주요 분석 쿼리 모음
+- **Jupyter Notebooks**: 
+  - `01_data_preprocessing.ipynb`: 데이터 전처리
+  - `02_key_metrics.ipynb`: 핵심 지표 계산
+  - `03_ab_testing.ipynb`: A/B 테스트 분석
+  - `04_visualization.ipynb`: 시각화
+- **Python Scripts**: 재사용 가능한 분석 함수
+- **Data**: 샘플 데이터 (또는 데이터 생성 스크립트)
+
+### 대시보드
+- **Tableau Public / Power BI**: 
+  - 주요 지표 대시보드
+  - Cohort Analysis 대시보드
+  - A/B 테스트 결과 대시보드
+- **스크린샷**: 대시보드 이미지 포함
+
+### 분석 리포트
+- **슬라이드 (PPT/PDF)**:
+  - 문제 정의
+  - 분석 접근 방법
+  - 주요 발견 사항
+  - 비즈니스 인사이트
+  - 제안 액션
+
+## 10. 토스뱅크 데이터 분석가 요구사항 매핑
+
+| 요구사항 | 프로젝트 반영 |
+|---------|-------------|
+| SQL 기반 데이터 추출·정제 | PostgreSQL 쿼리 작성, 데이터 전처리 |
+| 데이터 전처리 → 인사이트 도출 | 전체 분석 파이프라인 구현 |
+| 데이터 시각화 툴 | Tableau/Power BI 대시보드 구축 |
+| 모바일 서비스 지표 이해 | Retention, LTV, Cohort, Funnel 분석 |
+| A/B 테스트 설계·검증 | 3가지 시나리오 A/B 테스트 수행 |
+| 비즈니스 커뮤니케이션 | 스토리텔링 기반 리포트 작성 |
+| Python/R 통계분석 (우대) | Python 통계 검정 및 분석 |
+| 데이터 파이프라인 설계 (우대) | SQL → Python → 시각화 파이프라인 |
+
+## 11. 기대 효과
+
+### 실무 역량 증명
+- 토스뱅크 데이터 분석가 필수 역량 모두 시연
+- 실제 업무와 유사한 분석 프로세스 경험
+- SQL, Python, 시각화 툴 통합 활용
+
+### 포트폴리오 차별화
+- 단순 튜토리얼이 아닌 실전 프로젝트
+- 비즈니스 임팩트 중심의 분석
+- 재현 가능하고 확장 가능한 코드
+
+### 취업 경쟁력
+- 면접 시 구체적인 경험 설명 가능
+- 실무 즉시 투입 가능한 역량 증명
+- 데이터 기반 의사결정 능력 시연
