@@ -1,0 +1,18 @@
+# Core
+numpy
+pandas
+scikit-learn
+xgboost
+
+# Deep Learning & Time Series
+torch
+neuralforecast
+
+# Causal Inference
+econml
+dowhy
+
+# Visualization & App
+streamlit
+plotly
+matplotlib
