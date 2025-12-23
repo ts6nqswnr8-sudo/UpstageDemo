@@ -1,0 +1,32 @@
+name: marp-to-pages
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/presentation.md'
+      - '.github/workflows/marp.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Convert Marp to HTML
+        uses: docker://marpteam/marp-cli:v4.0.0
+        with:
+          args: docs/presentation.md -o public/index.html
+        env:
+          MARP_ARGS: "--html"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
