@@ -1,82 +1,135 @@
-# Causal Time Series Analysis & Forecasting System
+# Mobile User Behavior Analytics Platform
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ts6nqswnr8-sudo.github.io/UpstageDemo/)
+[![GitHub Issues](https://img.shields.io/github/issues/ts6nqswnr8-sudo/UpstageDemo)](https://github.com/ts6nqswnr8-sudo/UpstageDemo/issues)
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791.svg)](https://www.postgresql.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> 시계열 예측과 인과 추론을 결합한 연구 중심 AI 시스템
+> 모바일 앱 사용자 행동 데이터 기반 지표 분석 및 A/B 테스트 플랫폼
 
 ## 📖 프로젝트 개요
 
-**Causal Time Series Analysis & Forecasting System**은 최신 SOTA 시계열 예측 모델과 인과 추론 기술을 결합하여, 단순한 미래 예측을 넘어 **"만약 가격을 변경한다면?"**과 같은 반사실적(Counterfactual) 질문에 답할 수 있는 시스템입니다.
+**Mobile User Behavior Analytics Platform**은 모바일 서비스의 사용자 행동 데이터를 분석하여 핵심 지표를 계산하고, A/B 테스트를 통한 가설 검증 및 비즈니스 인사이트를 도출하는 데이터 분석 플랫폼입니다.
+
+토스뱅크 데이터 분석가 포지션 요구사항을 100% 반영한 포트폴리오 프로젝트입니다.
 
 ### 주요 특징
 
-- 🤖 **최신 SOTA 모델**: PatchTST, iTransformer, TimeMixer, State-Space Models (Mamba)
-- 🔬 **인과 추론**: DoWhy, EconML을 활용한 인과 효과 추정
-- 📊 **자동화된 실험**: MLflow, Optuna를 통한 체계적인 실험 관리
-- 🎯 **반사실적 시뮬레이션**: What-if 시나리오 분석
-- 📈 **Interactive 대시보드**: Streamlit 기반 시각화
+- 📊 **핵심 지표 분석**: Retention, Cohort, Conversion Funnel, LTV
+- 🧪 **A/B 테스트**: 3가지 비즈니스 시나리오 실험 설계 및 통계 검정
+- 💾 **SQL 기반 분석**: PostgreSQL을 활용한 데이터 추출 및 정제
+- 📈 **데이터 시각화**: Tableau/Power BI 대시보드 및 Python 차트
+- 📝 **비즈니스 리포트**: 스토리텔링 기반 인사이트 전달
 
 ## 🎯 프로젝트 목표
 
-1. **모델 벤치마킹**: 최신 시계열 모델들의 성능 비교 및 분석
-2. **인과 효과 정량화**: 가격, 마케팅 등 변수 변화가 결과에 미치는 영향 측정
-3. **설명 가능한 AI**: 예측 결과에 대한 인과적 설명 제공
-4. **연구 역량 증명**: LG AI Research 인턴십 수준의 포트폴리오 구축
+1. **SQL 역량**: PostgreSQL 기반 데이터 추출, 정제, 파생변수 생성
+2. **핵심 지표 이해**: 모바일 서비스 필수 지표 계산 및 해석
+3. **실험 설계**: A/B 테스트 설계 및 통계적 검증
+4. **시각화**: Tableau/Power BI 대시보드 구축
+5. **커뮤니케이션**: 분석 결과를 비즈니스 팀에 효과적으로 전달
 
 ## 🏗️ 시스템 아키텍처
 
 ```
 ┌─────────────────────┐
-│  Synthetic Data     │
-│  Generation (DAG)   │
+│  Mobile App Logs    │
+│  (Event Tracking)   │
 └──────────┬──────────┘
            │
            ▼
 ┌─────────────────────┐
-│  Forecasting Models │
-│  ├─ PatchTST        │
-│  ├─ iTransformer    │
-│  ├─ TimeMixer       │
-│  └─ SSM (Mamba)     │
+│   PostgreSQL DB     │
+│  - users            │
+│  - events           │
+│  - sessions         │
 └──────────┬──────────┘
            │
            ▼
 ┌─────────────────────┐
-│  Causal Inference   │
-│  ├─ DoWhy           │
-│  ├─ EconML          │
-│  └─ Counterfactual  │
+│   SQL Queries       │
+│  (Data Extraction)  │
 └──────────┬──────────┘
            │
            ▼
 ┌─────────────────────┐
-│  Streamlit Dashboard│
-│  & Visualization    │
+│  Python Analysis    │
+│  - Retention        │
+│  - Cohort           │
+│  - Funnel           │
+│  - LTV              │
+│  - A/B Testing      │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  Visualization      │
+│  - Tableau/Power BI │
+│  - Python Charts    │
 └─────────────────────┘
 ```
 
 ## 🛠️ 기술 스택
 
-### Core Technologies
-- **Language**: Python 3.9+
-- **Deep Learning**: PyTorch, TensorFlow
-- **시계열 모델**: HuggingFace Transformers, NeuralForecast
+### 데이터 처리
+- **SQL**: PostgreSQL (데이터 추출 및 정제)
+- **Python**: Pandas, NumPy (데이터 전처리 및 분석)
+- **Jupyter Notebook**: 탐색적 데이터 분석 (EDA)
 
-### Causal Inference
-- **Microsoft EconML**: Double ML, Causal Forest
-- **DoWhy**: Causal graph modeling
-- **CausalImpact**: Bayesian structural time-series
+### 통계 분석
+- **Python**: SciPy, StatsModels (통계 검정)
+- **A/B Testing**: t-test, Chi-square test
 
-### Experiment & Optimization
-- **MLflow**: Experiment tracking
-- **Optuna**: Hyperparameter optimization
-- **Ray Tune**: Distributed search
+### 시각화
+- **Tableau / Power BI**: 대시보드 구축
+- **Python**: Matplotlib, Seaborn, Plotly
 
-### Visualization
-- **Streamlit**: Interactive dashboard
-- **Matplotlib, Seaborn, Plotly**: Data visualization
+### 데이터베이스
+- **PostgreSQL**: 사용자 행동 로그 저장
+
+## 📊 핵심 지표
+
+### 1. Retention Rate (재방문율)
+사용자가 앱을 다시 사용하는 비율을 측정합니다.
+
+```python
+# Day 1 Retention 계산 예시
+retention_day1 = (재방문_사용자_수 / 신규_가입자_수) * 100
+```
+
+- **Day 1 Retention**: 가입 다음날 재방문율
+- **Day 7 Retention**: 가입 7일 후 재방문율
+- **Day 30 Retention**: 가입 30일 후 재방문율
+
+### 2. Cohort Analysis (코호트 분석)
+가입 시기별 사용자 그룹의 행동 패턴을 비교합니다.
+
+### 3. Conversion Funnel (전환 퍼널)
+사용자 여정의 각 단계별 전환율을 분석합니다.
+
+```
+회원가입 (100%) → 프로필 작성 (80%) → 첫 거래 (40%) → 재거래 (25%)
+```
+
+### 4. LTV (Lifetime Value)
+사용자의 생애 가치를 예측합니다.
+
+## 🧪 A/B 테스트 시나리오
+
+### 시나리오 1: 푸시 알림 최적화
+- **가설**: 개인화된 푸시 알림이 일반 푸시보다 재방문율을 높인다
+- **측정 지표**: Day 1/7 Retention
+- **통계 검정**: t-test
+
+### 시나리오 2: 온보딩 플로우 개선
+- **가설**: 간소화된 온보딩(3단계)이 기존(5단계)보다 첫 거래 전환율을 높인다
+- **측정 지표**: 온보딩 완료율, 첫 거래 전환율
+- **통계 검정**: Chi-square test
+
+### 시나리오 3: 할인 이벤트 효과 분석
+- **가설**: 10% 할인이 사용자 LTV를 증가시킨다
+- **측정 지표**: 30일 LTV, 재구매율
+- **통계 검정**: t-test
 
 ## 🚀 Quick Start
 
@@ -86,8 +139,9 @@
 # Python 3.9 이상 필요
 python --version
 
-# (Optional) GPU 사용 시 CUDA 설정
-nvidia-smi
+# PostgreSQL 설치
+# Windows: https://www.postgresql.org/download/windows/
+# Mac: brew install postgresql
 ```
 
 ### Installation
@@ -103,116 +157,84 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 3. 의존성 설치
 pip install -r requirements.txt
+
+# 4. PostgreSQL 데이터베이스 생성
+createdb mobile_analytics
 ```
 
 ### Usage
 
 ```bash
-# 1. 합성 데이터 생성
+# 1. 데이터베이스 스키마 생성
+python scripts/create_schema.py
+
+# 2. 가상 데이터 생성
 python scripts/generate_data.py
 
-# 2. 모델 학습
-python scripts/train_models.py --model patchTST
+# 3. Jupyter Notebook 실행
+jupyter notebook
 
-# 3. 인과 분석
-python scripts/causal_analysis.py
-
-# 4. 대시보드 실행
-streamlit run app/dashboard.py
+# 4. notebooks/ 디렉토리에서 분석 노트북 실행
+# - 01_data_preprocessing.ipynb
+# - 02_key_metrics.ipynb
+# - 03_ab_testing.ipynb
+# - 04_visualization.ipynb
 ```
 
 ## 📂 프로젝트 구조
 
 ```
 UpstageDemo/
+├── data/                      # 샘플 데이터
+│   └── sample_data.csv
+├── sql/                       # SQL 쿼리 모음
+│   ├── retention.sql
+│   ├── cohort.sql
+│   └── funnel.sql
+├── notebooks/                 # Jupyter Notebooks
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_key_metrics.ipynb
+│   ├── 03_ab_testing.ipynb
+│   └── 04_visualization.ipynb
+├── scripts/                   # Python 스크립트
+│   ├── create_schema.py
+│   ├── generate_data.py
+│   └── analysis_utils.py
+├── dashboards/                # 대시보드 스크린샷
+│   ├── main_dashboard.png
+│   └── cohort_dashboard.png
+├── reports/                   # 분석 리포트
+│   ├── analysis_report.pdf
+│   └── presentation.pptx
 ├── docs/                      # 문서
-│   ├── PRD.md                # Product Requirements Document
-│   ├── TASKS.md              # 작업 체크리스트
-│   ├── Ideation.md           # 프로젝트 아이디어
-│   └── presentation.md       # Marp 프레젠테이션
-├── src/                       # 소스 코드
-│   ├── data/                 # 데이터 생성 및 처리
-│   ├── models/               # 모델 구현
-│   │   ├── baseline/         # ARIMA, XGBoost, LSTM
-│   │   └── sota/             # PatchTST, iTransformer, etc.
-│   ├── causal/               # 인과 추론 모듈
-│   └── utils/                # 유틸리티 함수
-├── scripts/                   # 실행 스크립트
-├── app/                       # Streamlit 대시보드
-├── experiments/               # 실험 결과
-├── notebooks/                 # Jupyter notebooks
-└── tests/                     # 테스트 코드
+│   ├── PRD.md
+│   ├── TASKS.md
+│   └── Ideation.md
+└── README.md
 ```
 
-## 📊 주요 기능
+## 📈 주요 분석 결과 (예시)
 
-### 1. 합성 데이터 생성
-인과 관계가 명확한 시계열 데이터를 생성하여 모델 검증에 활용합니다.
+### Retention Analysis
+- **Day 1 Retention**: 45%
+- **Day 7 Retention**: 28%
+- **Day 30 Retention**: 15%
 
-```python
-from src.data import SyntheticDataGenerator
+### Cohort Insights
+- 2024년 1월 코호트가 가장 높은 Retention (32%)
+- iOS 사용자가 Android 대비 20% 높은 Retention
 
-generator = SyntheticDataGenerator(
-    causal_graph={'price': ['demand'], 'seasonality': ['sales']}
-)
-data = generator.generate(n_samples=1000)
-```
-
-### 2. 시계열 예측
-최신 SOTA 모델로 미래 값을 예측합니다.
-
-```python
-from src.models import PatchTST
-
-model = PatchTST(input_dim=10, hidden_dim=128)
-predictions = model.forecast(data, horizon=30)
-```
-
-### 3. 인과 효과 추정
-특정 변수 변화가 결과에 미치는 영향을 정량화합니다.
-
-```python
-from src.causal import CausalAnalyzer
-
-analyzer = CausalAnalyzer(method='econml')
-ate = analyzer.estimate_ate(treatment='price', outcome='sales')
-```
-
-### 4. 반사실적 시뮬레이션
-"만약 가격을 10% 올렸다면?"과 같은 시나리오를 시뮬레이션합니다.
-
-```python
-counterfactual = analyzer.simulate_counterfactual(
-    intervention={'price': 1.1},  # 10% 인상
-    data=data
-)
-```
-
-## 📈 실험 결과
-
-### 모델 성능 비교 (예시)
-
-| Model        | MSE    | MAE   | RMSE  |
-|-------------|--------|-------|-------|
-| ARIMA       | 0.245  | 0.389 | 0.495 |
-| XGBoost     | 0.198  | 0.321 | 0.445 |
-| LSTM        | 0.176  | 0.298 | 0.420 |
-| **PatchTST**    | **0.142**  | **0.265** | **0.377** |
-| iTransformer| 0.151  | 0.278 | 0.389 |
-| TimeMixer   | 0.148  | 0.271 | 0.385 |
-
-### 인과 효과 추정 (예시)
-
-- **Price Elasticity**: -0.85 (가격 1% 증가 시 수요 0.85% 감소)
-- **ATE (Average Treatment Effect)**: -12.3 units
-- **CATE 범위**: -8.5 ~ -15.2 units
+### A/B Test Results
+- **푸시 알림 최적화**: 개인화 푸시로 Day 1 Retention 8% 증가 (p < 0.01)
+- **온보딩 개선**: 간소화된 온보딩으로 첫 거래 전환율 15% 증가 (p < 0.05)
+- **할인 이벤트**: 10% 할인으로 30일 LTV 12% 증가 (p < 0.05)
 
 ## 🗓️ 개발 로드맵
 
-- [x] **Phase 1**: 데이터 및 환경 구축
-- [ ] **Phase 2**: 최신 모델 구현 및 벤치마킹
-- [ ] **Phase 3**: 인과 추론 통합
-- [ ] **Phase 4**: 대시보드 및 리포트
+- [x] **Phase 1**: 데이터 인프라 구축 (Week 1-2)
+- [ ] **Phase 2**: 핵심 지표 계산 (Week 3-4)
+- [ ] **Phase 3**: A/B 테스트 프레임워크 (Week 5-6)
+- [ ] **Phase 4**: 시각화 및 대시보드 (Week 7-8)
 
 자세한 작업 내용은 [TASKS.md](docs/TASKS.md)를 참조하세요.
 
@@ -221,7 +243,19 @@ counterfactual = analyzer.simulate_counterfactual(
 - [PRD (Product Requirements Document)](docs/PRD.md)
 - [작업 체크리스트 (TASKS)](docs/TASKS.md)
 - [프로젝트 아이디어 (Ideation)](docs/Ideation.md)
-- [프레젠테이션 (GitHub Pages)](https://ts6nqswnr8-sudo.github.io/UpstageDemo/)
+
+## 🎓 토스뱅크 데이터 분석가 요구사항 매핑
+
+| 요구사항 | 프로젝트 반영 |
+|---------|-------------|
+| SQL 기반 데이터 추출·정제 | PostgreSQL 쿼리 작성, 데이터 전처리 |
+| 데이터 전처리 → 인사이트 도출 | 전체 분석 파이프라인 구현 |
+| 데이터 시각화 툴 | Tableau/Power BI 대시보드 구축 |
+| 모바일 서비스 지표 이해 | Retention, LTV, Cohort, Funnel 분석 |
+| A/B 테스트 설계·검증 | 3가지 시나리오 A/B 테스트 수행 |
+| 비즈니스 커뮤니케이션 | 스토리텔링 기반 리포트 작성 |
+| Python/R 통계분석 (우대) | Python 통계 검정 및 분석 |
+| 데이터 파이프라인 설계 (우대) | SQL → Python → 시각화 파이프라인 |
 
 ## 🤝 기여
 
@@ -231,16 +265,10 @@ counterfactual = analyzer.simulate_counterfactual(
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- LG AI Research Data Intelligence Lab의 연구 방향성에서 영감을 받았습니다
-- SOTA 시계열 모델 논문 및 오픈소스 구현체를 참고했습니다
-- Microsoft EconML, DoWhy 팀에 감사드립니다
-
 ## 📧 Contact
 
 프로젝트에 대한 질문이나 제안사항이 있으시면 [GitHub Issues](https://github.com/ts6nqswnr8-sudo/UpstageDemo/issues)를 통해 연락주세요.
 
 ---
 
-**Built with ❤️ for LG AI Research Internship Application**
+**Built for Toss Bank Data Analyst Portfolio**
