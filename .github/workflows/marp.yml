@@ -1,4 +1,5 @@
 name: marp-to-pages
+
 on:
   push:
     branches:
@@ -7,13 +8,16 @@ on:
       - 'docs/presentation.md'
       - '.github/workflows/marp.yml'
 
+concurrency:
+  group: marp-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
