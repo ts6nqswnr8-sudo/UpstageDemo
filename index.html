@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="C"><head><title>Causal Time Series Analysis &amp; Forecasting System</title><meta property="og:title" content="Causal Time Series Analysis &amp; Forecasting System"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+<!DOCTYPE html><html lang="C"><head><title>Mobile User Behavior Analytics Platform</title><meta property="og:title" content="Mobile User Behavior Analytics Platform"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
  * Marp / Marpit Gaia theme.
  *
  * @theme gaia
@@ -32,10 +32,10 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h1 id="causal-time-series-analysis--forecasting-system">Causal Time Series Analysis &amp; Forecasting System</h1>
-<p><strong>시계열 예측과 인과 추론을 결합한 연구 중심 AI 시스템</strong></p>
-<p>LG AI Research Data Intelligence Lab 지원 포트폴리오</p>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h1 id="mobile-user-behavior-analytics-platform">Mobile User Behavior Analytics Platform</h1>
+<p><strong>모바일 앱 사용자 행동 데이터 기반 지표 &amp; 실험 분석</strong></p>
+<p>토스뱅크 데이터 분석가 포트폴리오 프로젝트</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -55,14 +55,14 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="%F0%9F%93%8C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94"><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4cc.svg" data-marp-twemoji=""/> 프로젝트 개요</h2>
-<p><strong>목표</strong>: 최신 시계열 예측 모델과 인과 추론 기술을 결합하여, 반사실적(Counterfactual) 시나리오 분석이 가능한 연구 중심 AI 시스템 개발</p>
+<p><strong>목표</strong>: 모바일 앱 사용자 행동 데이터를 분석하여 핵심 지표를 정의하고, A/B 테스트를 통한 가설 검증 및 비즈니스 인사이트 도출</p>
 <p><strong>핵심 가치</strong>:</p>
 <ul>
-<li>단순 예측을 넘어 <strong>&quot;만약 ~했다면?&quot;</strong> 질문에 답함</li>
-<li>인과 관계 기반 <strong>설명 가능한 AI</strong></li>
-<li>Top-tier 학회 수준의 <strong>실험 설계 및 분석</strong></li>
+<li><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4ca.svg" data-marp-twemoji=""/> 데이터 기반 의사결정</li>
+<li><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f9ea.svg" data-marp-twemoji=""/> 실험을 통한 가설 검증</li>
+<li><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4c8.svg" data-marp-twemoji=""/> 비즈니스 임팩트 정량화</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -83,29 +83,16 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="%F0%9F%8E%AF-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B3%A0%EC%9E%90-%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3af.svg" data-marp-twemoji=""/> 해결하고자 하는 문제</h2>
-<h3 id="1-%EB%8B%A8%EC%88%9C-%EC%98%88%EC%B8%A1%EC%9D%98-%ED%95%9C%EA%B3%84">1. 단순 예측의 한계</h3>
-<ul>
-<li>기존 모델: 과거 패턴 기반 예측만 가능</li>
-<li><strong>개입(Intervention)</strong> 질문에 답하지 못함
-<ul>
-<li>&quot;가격을 올리면 어떻게 될까?&quot;</li>
-<li>&quot;마케팅 예산을 늘리면?&quot;</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-%EC%9D%B8%EA%B3%BC-%EA%B4%80%EA%B3%84-%EC%9D%B4%ED%95%B4-%EB%B6%80%EC%A1%B1">2. 인과 관계 이해 부족</h3>
-<ul>
-<li>상관관계 ≠ 인과관계</li>
-<li>블랙박스 모델의 설명력 부족</li>
-</ul>
-<h3 id="3-%EC%97%B0%EA%B5%AC-%EC%97%AD%EB%9F%89-%EC%A6%9D%EB%AA%85-%ED%95%84%EC%9A%94">3. 연구 역량 증명 필요</h3>
-<ul>
-<li>체계적인 실험 설계</li>
-<li>재현 가능한 결과</li>
-<li>포트폴리오 수준의 문서화</li>
-</ul>
+<h3 id="1-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B8%B0%EB%B0%98-%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95-%EB%B6%80%EC%9E%AC">1. 데이터 기반 의사결정 부재</h3>
+<p>직관에 의존한 의사결정 → 데이터 기반 의사결정</p>
+<h3 id="2-%ED%95%B5%EC%8B%AC-%EC%A7%80%ED%91%9C-%EB%B6%80%EC%9E%AC">2. 핵심 지표 부재</h3>
+<p>성과 측정 불가 → Retention, LTV, Funnel 등 핵심 지표 정의</p>
+<h3 id="3-%EC%8B%A4%ED%97%98-%EA%B2%80%EC%A6%9D-%EB%AF%B8%ED%9D%A1">3. 실험 검증 미흡</h3>
+<p>효과 검증 불가 → A/B 테스트로 정량적 검증</p>
+<h3 id="4-%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%84%EB%8B%AC-%EC%96%B4%EB%A0%A4%EC%9B%80">4. 인사이트 전달 어려움</h3>
+<p>분석 결과 전달 실패 → 스토리텔링 기반 커뮤니케이션</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -125,20 +112,20 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%94%AC-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%8A%A5-mvp-scope"><img class="emoji" draggable="false" alt="🔬" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f52c.svg" data-marp-twemoji=""/> 핵심 기능 (MVP Scope)</h2>
-<h3 id="1-%ED%95%A9%EC%84%B1-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%83%9D%EC%84%B1">1. 합성 데이터 생성</h3>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%8A-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%8A%A5-mvp-scope"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4ca.svg" data-marp-twemoji=""/> 핵심 기능 (MVP Scope)</h2>
+<h3 id="1-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91-%EB%B0%8F-%EC%A0%84%EC%B2%98%EB%A6%AC">1. 데이터 수집 및 전처리</h3>
 <ul>
-<li>인과 그래프(DAG) 기반 데이터 생성</li>
-<li>Ground Truth 검증 가능</li>
-<li>계절성, 트렌드, 노이즈, 외부 충격 포함</li>
+<li>SQL 기반 데이터 추출 및 정제</li>
+<li>사용자 행동 로그, 세션 데이터 수집</li>
+<li>파생 변수 생성</li>
 </ul>
-<h3 id="2-sota-%EC%8B%9C%EA%B3%84%EC%97%B4-%EC%98%88%EC%B8%A1-%EB%AA%A8%EB%8D%B8">2. SOTA 시계열 예측 모델</h3>
+<h3 id="2-%ED%95%B5%EC%8B%AC-%EC%A7%80%ED%91%9C-%EA%B3%84%EC%82%B0">2. 핵심 지표 계산</h3>
 <ul>
-<li><strong>PatchTST</strong>: Transformer 기반 패치 단위 모델</li>
-<li><strong>iTransformer</strong>: Inverted Transformer</li>
-<li><strong>TimeMixer</strong>: Multi-scale mixing</li>
-<li><strong>SSM (Mamba)</strong>: State-Space Models</li>
+<li><strong>Retention Rate</strong>: Day 1/7/30 재방문율</li>
+<li><strong>Cohort Analysis</strong>: 코호트별 행동 패턴</li>
+<li><strong>Conversion Funnel</strong>: 단계별 전환율</li>
+<li><strong>LTV</strong>: 사용자 생애 가치</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -159,25 +146,19 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%94%AC-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%8A%A5-%EA%B3%84%EC%86%8D"><img class="emoji" draggable="false" alt="🔬" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f52c.svg" data-marp-twemoji=""/> 핵심 기능 (계속)</h2>
-<h3 id="3-%EC%9D%B8%EA%B3%BC-%EC%B6%94%EB%A1%A0-%EB%AA%A8%EB%93%88">3. 인과 추론 모듈</h3>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%8A-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%8A%A5-%EA%B3%84%EC%86%8D"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4ca.svg" data-marp-twemoji=""/> 핵심 기능 (계속)</h2>
+<h3 id="3-ab-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%84%A4%EA%B3%84-%EB%B0%8F-%EB%B6%84%EC%84%9D">3. A/B 테스트 설계 및 분석</h3>
 <ul>
-<li><strong>DoWhy</strong>: 인과 그래프 모델링</li>
-<li><strong>EconML</strong>: Double ML, Causal Forest</li>
-<li><strong>효과 추정</strong>: ATE, CATE, Price Elasticity</li>
-<li><strong>반사실적 추론</strong>: Counterfactual 시뮬레이션</li>
+<li>실험 설계 (가설, 대조군/실험군)</li>
+<li>통계 검정 (t-test, Chi-square)</li>
+<li>효과 크기 및 신뢰구간 계산</li>
 </ul>
-<h3 id="4-%EC%9E%90%EB%8F%99%ED%99%94%EB%90%9C-%EC%8B%A4%ED%97%98-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC">4. 자동화된 실험 프레임워크</h3>
+<h3 id="4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8B%9C%EA%B0%81%ED%99%94-%EB%B0%8F-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C">4. 데이터 시각화 및 대시보드</h3>
 <ul>
-<li><strong>MLflow</strong>: 실험 트래킹</li>
-<li><strong>Optuna</strong>: 하이퍼파라미터 최적화</li>
-<li>재현 가능한 실험 설계</li>
-</ul>
-<h3 id="5-interactive-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C">5. Interactive 대시보드</h3>
-<ul>
-<li><strong>Streamlit</strong> 기반 시각화</li>
-<li>실시간 시나리오 시뮬레이션</li>
+<li>Tableau / Power BI 대시보드</li>
+<li>Python 시각화 (Matplotlib, Seaborn)</li>
+<li>인터랙티브 차트 및 리포트</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -198,24 +179,23 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="%F0%9F%9B%A0%EF%B8%8F-%EA%B8%B0%EC%88%A0-%EC%8A%A4%ED%83%9D"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f6e0.svg" data-marp-twemoji=""/> 기술 스택</h2>
-<h3 id="core-technologies">Core Technologies</h3>
+<h3 id="%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC">데이터 처리</h3>
 <ul>
-<li><strong>Python 3.9+</strong>, PyTorch, TensorFlow</li>
-<li>HuggingFace Transformers, NeuralForecast</li>
+<li><strong>SQL</strong>: PostgreSQL (데이터 추출 및 정제)</li>
+<li><strong>Python</strong>: Pandas, NumPy (분석)</li>
+<li><strong>Jupyter Notebook</strong>: EDA</li>
 </ul>
-<h3 id="causal-inference">Causal Inference</h3>
+<h3 id="%ED%86%B5%EA%B3%84-%EB%B6%84%EC%84%9D">통계 분석</h3>
 <ul>
-<li>Microsoft <strong>EconML</strong>, <strong>DoWhy</strong>, CausalImpact</li>
+<li><strong>Python</strong>: SciPy, StatsModels</li>
+<li><strong>A/B Testing</strong>: t-test, Chi-square</li>
 </ul>
-<h3 id="experiment--optimization">Experiment &amp; Optimization</h3>
+<h3 id="%EC%8B%9C%EA%B0%81%ED%99%94">시각화</h3>
 <ul>
-<li><strong>MLflow</strong>, <strong>Optuna</strong>, Ray Tune</li>
-</ul>
-<h3 id="visualization">Visualization</h3>
-<ul>
-<li><strong>Streamlit</strong>, Matplotlib, Seaborn, Plotly</li>
+<li><strong>Tableau / Power BI</strong>: 대시보드</li>
+<li><strong>Python</strong>: Matplotlib, Seaborn, Plotly</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -236,21 +216,20 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%93%8A-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%9D%90%EB%A6%84"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4ca.svg" data-marp-twemoji=""/> 데이터 흐름</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>1. Synthetic Data Generation (DAG 기반)
-   ↓
-2. Data Preprocessing &amp; Feature Engineering
-   ↓
-3. Forecasting Models Training
-   (PatchTST, iTransformer, TimeMixer, SSM)
-   ↓
-4. Model Evaluation &amp; Comparison
-   ↓
-5. Causal Inference Analysis
-   (ATE/CATE 추정, Counterfactual)
-   ↓
-6. Visualization &amp; Reporting
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%88-%ED%95%B5%EC%8B%AC-%EC%A7%80%ED%91%9C-%EC%83%81%EC%84%B8"><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4c8.svg" data-marp-twemoji=""/> 핵심 지표 상세</h2>
+<h3 id="retention-rate-%EC%9E%AC%EB%B0%A9%EB%AC%B8%EC%9C%A8">Retention Rate (재방문율)</h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Day 1 Retention = (재방문 사용자 / 신규 가입자) × 100
+</code></pre>
+<ul>
+<li>Day 1: 가입 다음날 재방문율</li>
+<li>Day 7: 가입 7일 후 재방문율</li>
+<li>Day 30: 가입 30일 후 재방문율</li>
+</ul>
+<h3 id="cohort-analysis">Cohort Analysis</h3>
+<p>가입 시기별 사용자 그룹의 행동 패턴 비교</p>
+<h3 id="conversion-funnel">Conversion Funnel</h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>회원가입 → 프로필 작성 → 첫 거래 → 재거래
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -271,20 +250,25 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%8E%93-%EC%97%B0%EA%B5%AC-%EB%AA%A9%ED%91%9C-%EB%B0%8F-%EC%84%B1%EA%B3%BC-%EC%A7%80%ED%91%9C"><img class="emoji" draggable="false" alt="🎓" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f393.svg" data-marp-twemoji=""/> 연구 목표 및 성과 지표</h2>
-<h3 id="%EC%97%B0%EA%B5%AC-%EB%AA%A9%ED%91%9C">연구 목표</h3>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%A7%AA-ab-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4"><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f9ea.svg" data-marp-twemoji=""/> A/B 테스트 시나리오</h2>
+<h3 id="%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-1-%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC-%EC%B5%9C%EC%A0%81%ED%99%94">시나리오 1: 푸시 알림 최적화</h3>
 <ul>
-<li>최신 시계열 모델 벤치마킹</li>
-<li>인과 효과 정량화</li>
-<li>설명 가능한 예측 시스템</li>
+<li><strong>가설</strong>: 개인화된 푸시가 재방문율 향상</li>
+<li><strong>측정 지표</strong>: Day 1/7 Retention</li>
+<li><strong>통계 검정</strong>: t-test</li>
 </ul>
-<h3 id="%EC%84%B1%EA%B3%BC-%EC%A7%80%ED%91%9C">성과 지표</h3>
+<h3 id="%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-2-%EC%98%A8%EB%B3%B4%EB%94%A9-%ED%94%8C%EB%A1%9C%EC%9A%B0-%EA%B0%9C%EC%84%A0">시나리오 2: 온보딩 플로우 개선</h3>
 <ul>
-<li><strong>예측 정확도</strong>: 베이스라인 대비 개선율</li>
-<li><strong>인과 추정 정확도</strong>: Ground Truth 대비 오차</li>
-<li><strong>재현 가능성</strong>: 모든 실험 재현 가능</li>
-<li><strong>포트폴리오 품질</strong>: 논문 수준의 리포트</li>
+<li><strong>가설</strong>: 간소화된 온보딩이 전환율 향상</li>
+<li><strong>측정 지표</strong>: 온보딩 완료율, 첫 거래 전환율</li>
+<li><strong>통계 검정</strong>: Chi-square test</li>
+</ul>
+<h3 id="%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-3-%ED%95%A0%EC%9D%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%9A%A8%EA%B3%BC">시나리오 3: 할인 이벤트 효과</h3>
+<ul>
+<li><strong>가설</strong>: 10% 할인이 LTV 증가</li>
+<li><strong>측정 지표</strong>: 30일 LTV, 재구매율</li>
+<li><strong>통계 검정</strong>: t-test</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -305,20 +289,22 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%97%93%EF%B8%8F-%EA%B0%9C%EB%B0%9C-%EB%A1%9C%EB%93%9C%EB%A7%B5"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f5d3.svg" data-marp-twemoji=""/> 개발 로드맵</h2>
-<h3 id="phase-1-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B0%8F-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-week-1-2">Phase 1: 데이터 및 환경 구축 (Week 1-2)</h3>
-<ul>
-<li>합성 데이터 생성 (인과 그래프 기반)</li>
-<li>ML 환경 설정 (PyTorch, EconML, Optuna)</li>
-<li>베이스라인 모델 (ARIMA, XGBoost, LSTM)</li>
-</ul>
-<h3 id="phase-2-%EC%B5%9C%EC%8B%A0-%EB%AA%A8%EB%8D%B8-%EA%B5%AC%ED%98%84-week-3-4">Phase 2: 최신 모델 구현 (Week 3-4)</h3>
-<ul>
-<li>PatchTST, iTransformer, TimeMixer, SSM 구현</li>
-<li>자동화된 실험 파이프라인</li>
-<li>모델 성능 비교 및 분석</li>
-</ul>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%8A-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%9D%90%EB%A6%84"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4ca.svg" data-marp-twemoji=""/> 데이터 흐름</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>1. 모바일 앱 이벤트 로그 수집
+   ↓
+2. PostgreSQL 데이터베이스 저장
+   ↓
+3. SQL 기반 데이터 추출
+   ↓
+4. Python 분석
+   - 핵심 지표 계산
+   - A/B 테스트 통계 검정
+   ↓
+5. 시각화 및 리포트
+   - Tableau 대시보드
+   - Python 차트
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -338,19 +324,18 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%97%93%EF%B8%8F-%EA%B0%9C%EB%B0%9C-%EB%A1%9C%EB%93%9C%EB%A7%B5-%EA%B3%84%EC%86%8D"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f5d3.svg" data-marp-twemoji=""/> 개발 로드맵 (계속)</h2>
-<h3 id="phase-3-%EC%9D%B8%EA%B3%BC-%EC%B6%94%EB%A1%A0-%ED%86%B5%ED%95%A9-week-5-6">Phase 3: 인과 추론 통합 (Week 5-6)</h3>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%97%93%EF%B8%8F-%EA%B0%9C%EB%B0%9C-%EB%A1%9C%EB%93%9C%EB%A7%B5"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f5d3.svg" data-marp-twemoji=""/> 개발 로드맵</h2>
+<h3 id="phase-1-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B5%AC%EC%B6%95-week-1-2">Phase 1: 데이터 인프라 구축 (Week 1-2)</h3>
 <ul>
-<li>DoWhy/EconML 인과 그래프 정의</li>
-<li>ATE/CATE 추정 및 검증</li>
-<li>반사실적 시뮬레이션</li>
+<li>PostgreSQL 데이터베이스 설계</li>
+<li>가상 사용자 데이터 생성 (1만명+)</li>
+<li>SQL 쿼리 작성</li>
 </ul>
-<h3 id="phase-4-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EB%B0%8F-%EB%A6%AC%ED%8F%AC%ED%8A%B8-week-7-8">Phase 4: 대시보드 및 리포트 (Week 7-8)</h3>
+<h3 id="phase-2-%ED%95%B5%EC%8B%AC-%EC%A7%80%ED%91%9C-%EA%B3%84%EC%82%B0-week-3-4">Phase 2: 핵심 지표 계산 (Week 3-4)</h3>
 <ul>
-<li>Streamlit 대시보드 구현</li>
-<li>실험 결과 시각화</li>
-<li>포트폴리오 문서화</li>
+<li>Retention, Cohort, Funnel, LTV 계산</li>
+<li>세그먼트별 비교 분석</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -371,22 +356,19 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%92%A1-%EA%B8%B0%EB%8C%80-%ED%9A%A8%EA%B3%BC-%EB%B0%8F-%ED%99%9C%EC%9A%A9"><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4a1.svg" data-marp-twemoji=""/> 기대 효과 및 활용</h2>
-<h3 id="%EC%97%B0%EA%B5%AC-%EC%97%AD%EB%9F%89-%EC%A6%9D%EB%AA%85">연구 역량 증명</h3>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%97%93%EF%B8%8F-%EA%B0%9C%EB%B0%9C-%EB%A1%9C%EB%93%9C%EB%A7%B5-%EA%B3%84%EC%86%8D"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f5d3.svg" data-marp-twemoji=""/> 개발 로드맵 (계속)</h2>
+<h3 id="phase-3-ab-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-week-5-6">Phase 3: A/B 테스트 프레임워크 (Week 5-6)</h3>
 <ul>
-<li>Top-tier 학회(NeurIPS, ICLR, ICML) 수준의 실험 설계</li>
-<li>최신 시계열 모델 깊은 이해 및 구현</li>
+<li>실험 설계 프레임워크 구축</li>
+<li>3가지 시나리오 A/B 테스트 수행</li>
+<li>통계 검정 및 결과 분석</li>
 </ul>
-<h3 id="%EC%8B%A4%EB%AC%B4-%EC%A0%81%EC%9A%A9-%EA%B0%80%EB%8A%A5%EC%84%B1">실무 적용 가능성</h3>
+<h3 id="phase-4-%EC%8B%9C%EA%B0%81%ED%99%94-%EB%B0%8F-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-week-7-8">Phase 4: 시각화 및 대시보드 (Week 7-8)</h3>
 <ul>
-<li>소매/제조/금융 등 다양한 산업 활용</li>
-<li>가격 최적화, 수요 예측, 재고 관리</li>
-</ul>
-<h3 id="lg-ai-research-%EC%A0%81%ED%95%A9%EC%84%B1">LG AI Research 적합성</h3>
-<ul>
-<li>Data Intelligence Lab 연구 방향 완벽 부합</li>
-<li>시계열, 인과추론, 최적화 통합</li>
+<li>Tableau/Power BI 대시보드 구축</li>
+<li>Python 시각화</li>
+<li>분석 리포트 및 슬라이드 작성</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -407,44 +389,24 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="%F0%9F%93%88-%EC%98%88%EC%83%81-%EA%B2%B0%EA%B3%BC-%EC%98%88%EC%8B%9C"><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4c8.svg" data-marp-twemoji=""/> 예상 결과 (예시)</h2>
-<h3 id="%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90">모델 성능 비교</h3>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>MSE</th>
-<th>MAE</th>
-<th>RMSE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARIMA</td>
-<td>0.245</td>
-<td>0.389</td>
-<td>0.495</td>
-</tr>
-<tr>
-<td>LSTM</td>
-<td>0.176</td>
-<td>0.298</td>
-<td>0.420</td>
-</tr>
-<tr>
-<td><strong>PatchTST</strong></td>
-<td><strong>0.142</strong></td>
-<td><strong>0.265</strong></td>
-<td><strong>0.377</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="%EC%9D%B8%EA%B3%BC-%ED%9A%A8%EA%B3%BC-%EC%B6%94%EC%A0%95">인과 효과 추정</h3>
+<h3 id="retention-analysis">Retention Analysis</h3>
 <ul>
-<li><strong>Price Elasticity</strong>: -0.85</li>
-<li><strong>ATE</strong>: -12.3 units</li>
-<li><strong>추정 정확도</strong>: Ground Truth 대비 ±5%</li>
+<li>Day 1 Retention: 45%</li>
+<li>Day 7 Retention: 28%</li>
+<li>Day 30 Retention: 15%</li>
+</ul>
+<h3 id="cohort-insights">Cohort Insights</h3>
+<ul>
+<li>2024년 1월 코호트가 가장 높은 Retention (32%)</li>
+<li>iOS 사용자가 Android 대비 20% 높은 Retention</li>
+</ul>
+<h3 id="ab-test-results">A/B Test Results</h3>
+<ul>
+<li>푸시 알림 최적화: Day 1 Retention <strong>8% 증가</strong> (p &lt; 0.01)</li>
+<li>온보딩 개선: 첫 거래 전환율 <strong>15% 증가</strong> (p &lt; 0.05)</li>
+<li>할인 이벤트: 30일 LTV <strong>12% 증가</strong> (p &lt; 0.05)</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
@@ -465,14 +427,42 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%8E%AF-%EC%B0%A8%EB%B3%84%ED%99%94-%ED%8F%AC%EC%9D%B8%ED%8A%B8"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3af.svg" data-marp-twemoji=""/> 차별화 포인트</h2>
-<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>최신 SOTA 모델</strong> 4종 통합 비교<br />
-<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>인과 추론</strong> 기반 설명 가능한 AI<br />
-<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>자동화된 실험</strong> 프레임워크 (MLflow + Optuna)<br />
-<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>재현 가능성</strong> 100% 보장<br />
-<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>포트폴리오 품질</strong> 논문 수준 문서화<br />
-<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Interactive 대시보드</strong> 실시간 시뮬레이션</p>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%8E%93-%ED%86%A0%EC%8A%A4%EB%B1%85%ED%81%AC-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%A7%A4%ED%95%91"><img class="emoji" draggable="false" alt="🎓" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f393.svg" data-marp-twemoji=""/> 토스뱅크 요구사항 매핑</h2>
+<table>
+<thead>
+<tr>
+<th>요구사항</th>
+<th>프로젝트 반영</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL 데이터 추출·정제</td>
+<td>PostgreSQL 쿼리 작성 <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+<tr>
+<td>모바일 서비스 지표</td>
+<td>Retention, LTV, Cohort, Funnel <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+<tr>
+<td>A/B 테스트 설계·검증</td>
+<td>3가지 시나리오 실험 <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+<tr>
+<td>데이터 시각화 툴</td>
+<td>Tableau/Power BI 대시보드 <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+<tr>
+<td>비즈니스 커뮤니케이션</td>
+<td>스토리텔링 리포트 <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+<tr>
+<td>Python 통계분석</td>
+<td>SciPy, StatsModels <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
+</tr>
+</tbody>
+</table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -492,13 +482,14 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
-<h2 id="%F0%9F%93%9A-%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C"><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4da.svg" data-marp-twemoji=""/> 참고 자료</h2>
-<ul>
-<li><strong>GitHub Repository</strong>: <a href="https://github.com/ts6nqswnr8-sudo/UpstageDemo">UpstageDemo</a></li>
-<li><strong>Documentation</strong>: PRD, TASKS, README</li>
-<li><strong>GitHub Pages</strong>: <a href="https://ts6nqswnr8-sudo.github.io/UpstageDemo/">Live Presentation</a></li>
-</ul>
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%92%A1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%B0%A8%EB%B3%84%ED%99%94-%ED%8F%AC%EC%9D%B8%ED%8A%B8"><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4a1.svg" data-marp-twemoji=""/> 프로젝트 차별화 포인트</h2>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>실무 중심</strong>: 토스뱅크 실제 업무와 유사한 분석 프로세스<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>통합 역량</strong>: SQL + Python + 시각화 툴 통합 활용<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>통계적 엄밀성</strong>: A/B 테스트 통계 검정 및 검증<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>비즈니스 임팩트</strong>: 정량화된 결과 및 액션 아이템<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>재현 가능성</strong>: 모든 분석 코드 및 쿼리 문서화<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>포트폴리오 품질</strong>: GitHub, 대시보드, 리포트 완비</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -518,11 +509,111 @@ h1 {
 h2 {
   color: #34495e;
 }
-;background-color:#fff;background-image:none;" data-marpit-pagination-total="15">
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%9A-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EA%B5%AC%EC%84%B1"><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4da.svg" data-marp-twemoji=""/> 포트폴리오 구성</h2>
+<h3 id="github-repository">GitHub Repository</h3>
+<ul>
+<li>README, PRD, TASKS 문서</li>
+<li>SQL 쿼리 모음</li>
+<li>Jupyter Notebooks (4개)</li>
+<li>Python 스크립트</li>
+</ul>
+<h3 id="%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C">대시보드</h3>
+<ul>
+<li>Tableau/Power BI 대시보드 (3개)</li>
+<li>스크린샷 및 링크</li>
+</ul>
+<h3 id="%EB%B6%84%EC%84%9D-%EB%A6%AC%ED%8F%AC%ED%8A%B8">분석 리포트</h3>
+<ul>
+<li>슬라이드 (PPT): 문제 → 분석 → 인사이트 → 액션</li>
+<li>문서: 상세 분석 결과</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+" lang="C" data-marpit-pagination="16" style="--paginate:true;--background-color:#fff;--theme:gaia;--style:section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%8E%AF-%EA%B8%B0%EB%8C%80-%ED%9A%A8%EA%B3%BC"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3af.svg" data-marp-twemoji=""/> 기대 효과</h2>
+<h3 id="%EC%8B%A4%EB%AC%B4-%EC%97%AD%EB%9F%89-%EC%A6%9D%EB%AA%85">실무 역량 증명</h3>
+<ul>
+<li>토스뱅크 데이터 분석가 필수 역량 100% 시연</li>
+<li>실제 업무와 유사한 분석 프로세스 경험</li>
+</ul>
+<h3 id="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%B0%A8%EB%B3%84%ED%99%94">포트폴리오 차별화</h3>
+<ul>
+<li>단순 튜토리얼이 아닌 실전 프로젝트</li>
+<li>비즈니스 임팩트 중심의 분석</li>
+</ul>
+<h3 id="%EC%B7%A8%EC%97%85-%EA%B2%BD%EC%9F%81%EB%A0%A5">취업 경쟁력</h3>
+<ul>
+<li>면접 시 구체적인 경험 설명 가능</li>
+<li>실무 즉시 투입 가능한 역량 증명</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+" lang="C" data-marpit-pagination="17" style="--paginate:true;--background-color:#fff;--theme:gaia;--style:section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
+<h2 id="%F0%9F%93%9A-%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C"><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4da.svg" data-marp-twemoji=""/> 참고 자료</h2>
+<ul>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/ts6nqswnr8-sudo/UpstageDemo">UpstageDemo</a></li>
+<li><strong>Documentation</strong>: PRD, TASKS, README</li>
+<li><strong>Issues</strong>: 7개 Phase별 작업 이슈</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-style="section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+" lang="C" data-marpit-pagination="18" style="--paginate:true;--background-color:#fff;--theme:gaia;--style:section {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+h1 {
+  color: #2c3e50;
+}
+h2 {
+  color: #34495e;
+}
+;background-color:#fff;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="%F0%9F%99%8F-thank-you"><img class="emoji" draggable="false" alt="🙏" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64f.svg" data-marp-twemoji=""/> Thank You!</h2>
 <p><strong>Questions?</strong></p>
 <p>GitHub: <a href="https://github.com/ts6nqswnr8-sudo/UpstageDemo">ts6nqswnr8-sudo/UpstageDemo</a></p>
-<p><strong>Built with <img class="emoji" draggable="false" alt="❤️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" data-marp-twemoji=""/> for LG AI Research Internship Application</strong></p>
+<p><strong>Built for Toss Bank Data Analyst Portfolio</strong></p>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol(),l=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o);let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();l()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[a]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();
 </script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.3/lib/bespoke.js.LICENSE.txt */
